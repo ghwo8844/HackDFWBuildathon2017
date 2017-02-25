@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interior Layout</title>
+    <meta name="Interior Layout Creator" content="HackDFW Buildathon 2017">
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="tablesquarehigh" src="assets/table.obj"></a-asset-item>
+      </a-assets>
+
+      <a-box color="#888" height=".1" width="1000" depth="1000" position="0 0 0"></a-box>
+      <a-box color="#DDD" height="5" width="5" depth="5" position="0 10 0"></a-box>
+      <a-entity obj-model="obj: #tablesquarehigh" position="10 10 0"></a-entity>
+      <a-entity position="0 50 0">
+        <a-camera far="1000">
+          <a-cursor color="#DDD"></a-cursor>
+        </a-camera>
+      </a-entity>
+      <a-sky color="#000000" radius="500"></a-sky>
+      <a-light position="0 500 0" angle="0"></a-light>
+    </a-scene>
+  </body>
+</html>
