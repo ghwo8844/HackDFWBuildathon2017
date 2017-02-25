@@ -1,0 +1,334 @@
+var _user$project$Main$blue = A3(_elm_lang$core$Color$rgb, 6, 181, 204);
+var _user$project$Main$green = A3(_elm_lang$core$Color$rgb, 127, 209, 59);
+var _user$project$Main$grey = A3(_elm_lang$core$Color$rgb, 90, 99, 120);
+var _user$project$Main$orange = A3(_elm_lang$core$Color$rgb, 240, 173, 0);
+var _user$project$Main$heightFromPrismRadius = function (radius) {
+	return radius / (_elm_lang$core$Basics$sqrt(3) / 3);
+};
+var _user$project$Main$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
+	A2(
+		_user$project$AFrame$scene,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_user$project$AFrame$entity,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(
+						_user$project$AFrame_Animations$animation,
+						{
+							ctor: '::',
+							_0: _user$project$AFrame_Animations$attribute_('rotation'),
+							_1: {
+								ctor: '::',
+								_0: _user$project$AFrame_Animations$dur(10000),
+								_1: {
+									ctor: '::',
+									_0: _user$project$AFrame_Animations$easing('linear'),
+									_1: {
+										ctor: '::',
+										_0: _user$project$AFrame_Animations$fill('forwards'),
+										_1: {
+											ctor: '::',
+											_0: _user$project$AFrame_Animations$to('0 360 0'),
+											_1: {
+												ctor: '::',
+												_0: _user$project$AFrame_Animations$repeat(10000),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_user$project$AFrame_Primitives$cylinder,
+							{
+								ctor: '::',
+								_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+								_1: {
+									ctor: '::',
+									_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(3),
+									_1: {
+										ctor: '::',
+										_0: A3(
+											_user$project$AFrame_Primitives_Attributes$scale,
+											_user$project$Main$heightFromPrismRadius(1),
+											1,
+											1),
+										_1: {
+											ctor: '::',
+											_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$blue),
+											_1: {
+												ctor: '::',
+												_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, -90, 0, 0),
+												_1: {
+													ctor: '::',
+													_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 0, 0),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_user$project$AFrame_Primitives$cylinder,
+								{
+									ctor: '::',
+									_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+									_1: {
+										ctor: '::',
+										_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(3),
+										_1: {
+											ctor: '::',
+											_0: A3(
+												_user$project$AFrame_Primitives_Attributes$scale,
+												_user$project$Main$heightFromPrismRadius(
+													_elm_lang$core$Basics$sqrt(2) / 2),
+												1,
+												_elm_lang$core$Basics$sqrt(2) / 2),
+											_1: {
+												ctor: '::',
+												_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$blue),
+												_1: {
+													ctor: '::',
+													_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, -135, -90, 90),
+													_1: {
+														ctor: '::',
+														_0: A3(_user$project$AFrame_Primitives_Attributes$position, 1, 2, 0),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_user$project$AFrame_Primitives$cylinder,
+									{
+										ctor: '::',
+										_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+										_1: {
+											ctor: '::',
+											_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(3),
+											_1: {
+												ctor: '::',
+												_0: A3(
+													_user$project$AFrame_Primitives_Attributes$scale,
+													_user$project$Main$heightFromPrismRadius(1),
+													1,
+													1),
+												_1: {
+													ctor: '::',
+													_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$grey),
+													_1: {
+														ctor: '::',
+														_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, 0, 90, 90),
+														_1: {
+															ctor: '::',
+															_0: A3(_user$project$AFrame_Primitives_Attributes$position, -1, 1, 0),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_user$project$AFrame_Primitives$cylinder,
+										{
+											ctor: '::',
+											_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+											_1: {
+												ctor: '::',
+												_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(3),
+												_1: {
+													ctor: '::',
+													_0: A3(
+														_user$project$AFrame_Primitives_Attributes$scale,
+														_user$project$Main$heightFromPrismRadius(0.5),
+														1,
+														0.5),
+													_1: {
+														ctor: '::',
+														_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$orange),
+														_1: {
+															ctor: '::',
+															_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, 0, -90, 90),
+															_1: {
+																ctor: '::',
+																_0: A3(_user$project$AFrame_Primitives_Attributes$position, 1.25, 0.25, 0),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_user$project$AFrame_Primitives$cylinder,
+											{
+												ctor: '::',
+												_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+												_1: {
+													ctor: '::',
+													_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(3),
+													_1: {
+														ctor: '::',
+														_0: A3(
+															_user$project$AFrame_Primitives_Attributes$scale,
+															_user$project$Main$heightFromPrismRadius(0.5),
+															1,
+															0.5),
+														_1: {
+															ctor: '::',
+															_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$orange),
+															_1: {
+																ctor: '::',
+																_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, 90, -90, 90),
+																_1: {
+																	ctor: '::',
+																	_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 1.5, 0),
+																	_1: {ctor: '[]'}
+																}
+															}
+														}
+													}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_user$project$AFrame_Primitives$cylinder,
+												{
+													ctor: '::',
+													_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+													_1: {
+														ctor: '::',
+														_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(4),
+														_1: {
+															ctor: '::',
+															_0: A3(_user$project$AFrame_Primitives_Attributes$scale, 0.75, 1, 0.75),
+															_1: {
+																ctor: '::',
+																_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$green),
+																_1: {
+																	ctor: '::',
+																	_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, 90, -90, 90),
+																	_1: {
+																		ctor: '::',
+																		_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0.75, 1, 0),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												},
+												{ctor: '[]'}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_user$project$AFrame$entity,
+													{ctor: '[]'},
+													{
+														ctor: '::',
+														_0: A2(
+															_user$project$AFrame_Primitives$cylinder,
+															{
+																ctor: '::',
+																_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(3),
+																	_1: {
+																		ctor: '::',
+																		_0: A3(
+																			_user$project$AFrame_Primitives_Attributes$scale,
+																			_user$project$Main$heightFromPrismRadius(0.5),
+																			1,
+																			0.5),
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$green),
+																			_1: {
+																				ctor: '::',
+																				_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, -90, 90, 90),
+																				_1: {
+																					ctor: '::',
+																					_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 2, 0),
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}
+																	}
+																}
+															},
+															{ctor: '[]'}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_user$project$AFrame_Primitives$cylinder,
+																{
+																	ctor: '::',
+																	_0: _user$project$AFrame_Primitives_Attributes$radius(1),
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$AFrame_Primitives_Attributes$segmentsRadial(3),
+																		_1: {
+																			ctor: '::',
+																			_0: A3(
+																				_user$project$AFrame_Primitives_Attributes$scale,
+																				_user$project$Main$heightFromPrismRadius(0.5),
+																				1,
+																				0.5),
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$Main$green),
+																				_1: {
+																					ctor: '::',
+																					_0: A3(_user$project$AFrame_Primitives_Attributes$rotation, 90, -90, 90),
+																					_1: {
+																						ctor: '::',
+																						_0: A3(_user$project$AFrame_Primitives_Attributes$position, -0.75, 2.25, 0),
+																						_1: {ctor: '[]'}
+																					}
+																				}
+																			}
+																		}
+																	}
+																},
+																{ctor: '[]'}),
+															_1: {ctor: '[]'}
+														}
+													}),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		}));
