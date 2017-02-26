@@ -1,148 +1,94 @@
 module Main exposing (..)
 
-import Html exposing (Html)
-import Color exposing (rgb, Color)
+import Html exposing (..)
+import Html.Attributes exposing (id)
 import AFrame exposing (scene, entity)
-import AFrame.Animations
-    exposing
-        ( animation
-        , easing
-        , attribute_
-        , dur
-        , fill
-        , to
-        , repeat
-        )
-import AFrame.Primitives exposing (box, cylinder)
-import AFrame.Primitives.Attributes
-    exposing
-        ( rotation
-        , color
-        , scale
-        , radius
-        , position
-        , segmentsRadial
-        )
+import AFrame.Primitives exposing (assets, assetItem, box)
+import AFrame.Primitives.Attributes exposing (position, color, src, scale)
+import String exposing (length)
+import CameraConfig exposing (..)
+import ColorScheme exposing (..)
+import Base exposing (..)
 
 
-{-| Calculate scale factor for x axis of a triangular prism,
-to get a prism with a proper shape.
-
-    heightFromPrismRadius 2
--}
-heightFromPrismRadius : Float -> Float
-heightFromPrismRadius radius =
-    radius / ((sqrt 3) / 3)
+type alias Model =
+    { active : String }
 
 
-orange : Color
-orange =
-    rgb 240 173 0
+type Msg
+    = Click String 
 
 
-grey : Color
-grey =
-    rgb 90 99 120
+init : ( Model, Cmd Msg )
+init =
+    ( Model "", Cmd.none )
 
 
-green : Color
-green =
-    rgb 127 209 59
-
-
-blue : Color
-blue =
-    rgb 6 181 204
-
-
-main : Html msg
+main : Program Never Model Msg
 main =
-    scene
-        []
-        [ entity []
-            [ animation
-                [ attribute_ "rotation"
-                , dur 10000
-                , easing "linear"
-                , fill "forwards"
-                , to "0 360 0"
-                , repeat 10000
-                ]
-                []
-            , cylinder
-                [ radius 1
-                , segmentsRadial 3
-                , scale (heightFromPrismRadius 1) 1 1
-                , color blue
-                , rotation -90 0 0
-                , position 0 0 0
-                ]
-                []
-            , cylinder
-                [ radius 1
-                , segmentsRadial 3
-                , scale (heightFromPrismRadius ((sqrt 2) / 2)) 1 ((sqrt 2) / 2)
-                , color blue
-                , rotation -135 -90 90
-                , position 1 2 0
-                ]
-                []
-            , cylinder
-                [ radius 1
-                , segmentsRadial 3
-                , scale (heightFromPrismRadius 1) 1 1
-                , color grey
-                , rotation 0 90 90
-                , position -1 1 0
-                ]
-                []
-            , cylinder
-                [ radius 1
-                , segmentsRadial 3
-                , scale (heightFromPrismRadius 0.5) 1 0.5
-                , color orange
-                , rotation 0 -90 90
-                , position 1.25 0.25 0
-                ]
-                []
-            , cylinder
-                [ radius 1
-                , segmentsRadial 3
-                , scale (heightFromPrismRadius 0.5) 1 0.5
-                , color orange
-                , rotation 90 -90 90
-                , position 0 1.5 0
-                ]
-                []
-            , cylinder
-                [ radius 1
-                , segmentsRadial 4
-                , scale 0.75 1 0.75
-                , color green
-                , rotation 90 -90 90
-                , position 0.75 1 0
-                ]
-                []
-            , entity
-                []
-                [ cylinder
-                    [ radius 1
-                    , segmentsRadial 3
-                    , scale (heightFromPrismRadius 0.5) 1 0.5
-                    , color green
-                    , rotation -90 90 90
-                    , position 0 2 0
-                    ]
-                    []
-                , cylinder
-                    [ radius 1
-                    , segmentsRadial 3
-                    , scale (heightFromPrismRadius 0.5) 1 0.5
-                    , color green
-                    , rotation 90 -90 90
-                    , position -0.75 2.25 0
-                    ]
-                    []
-                ]
-            ]
+    Html.program
+        { init = init
+        , view = view
+        , subscriptions = subscriptions
+        , update = update
+        }
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        Click string ->
+            if length ( model.active ) > 0 && string == model.active
+                then ( { model | active = "" }, Cmd.none ) 
+                else ( { model | active = string }, Cmd.none )
+
+side =
+    30.0
+
+height = 
+    3.0
+
+view : Model -> Html Msg
+view model =
+    scene [ ] [ 
+        assets [ ] [
+            assetItem [ 
+                id "table",
+                src "../assets/table.obj"
+            ] [ ]
         ]
+        , cam
+        , entity [ ] [ 
+                box [ 
+                    position 0 0 0,
+                    scale side 0.1 side,
+                    color ground
+                ] [ ],
+                box [ 
+                    position (side / 2) (height / 2) 0,
+                    scale 0.1 height side,
+                    color ground
+                ] [ ],
+                box [ 
+                    position (side / -2) (height / 2) 0,
+                    scale 0.1 height side,
+                    color ground
+                ] [ ],
+                box [ 
+                    position 0 (height / 2) (side / 2),
+                    scale side height 0.1,
+                    color ground
+                ] [ ],
+                box [ 
+                    position 0 (height / 2) (side / -2),
+                    scale side height 0.1,
+                    color ground
+                ] [ ]
+            ]
+        , bg
+    ]   
