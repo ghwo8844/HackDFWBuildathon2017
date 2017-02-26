@@ -55,40 +55,8 @@ height =
 
 view : Model -> Html Msg
 view model =
-    scene [ ] [ 
-        assets [ ] [
-            assetItem [ 
-                id "table",
-                src "../assets/table.obj"
-            ] [ ]
-        ]
-        , cam
-        , entity [ ] [ 
-                box [ 
-                    position 0 0 0,
-                    scale side 0.1 side,
-                    color ground
-                ] [ ],
-                box [ 
-                    position (side / 2) (height / 2) 0,
-                    scale 0.1 height side,
-                    color ground
-                ] [ ],
-                box [ 
-                    position (side / -2) (height / 2) 0,
-                    scale 0.1 height side,
-                    color ground
-                ] [ ],
-                box [ 
-                    position 0 (height / 2) (side / 2),
-                    scale side height 0.1,
-                    color ground
-                ] [ ],
-                box [ 
-                    position 0 (height / 2) (side / -2),
-                    scale side height 0.1,
-                    color ground
-                ] [ ]
-            ]
+    scene [ ] [
+        cam
+        , getBase side height
         , bg
     ]   
