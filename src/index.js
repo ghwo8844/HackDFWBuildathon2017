@@ -8728,6 +8728,7 @@ var _user$project$AFrame_Primitives_Attributes$material = function (color) {
 			'color: ',
 			_user$project$AFrame_Primitives_Attributes$colorToHex(color)));
 };
+var _user$project$AFrame_Primitives_Attributes$mouseCursor = A2(_elm_lang$html$Html_Attributes$attribute, 'mouse-cursor', '');
 
 var _user$project$AFrame_Primitives_Camera$wasdControlsEnabled = function (value) {
 	return A2(
@@ -8793,48 +8794,130 @@ var _user$project$ColorScheme$background = A3(_elm_lang$core$Color$rgb, 10, 10, 
 var _user$project$ColorScheme$ground = A3(_elm_lang$core$Color$rgb, 70, 70, 70);
 var _user$project$ColorScheme$cursorColor = A3(_elm_lang$core$Color$rgb, 150, 150, 150);
 
-var _user$project$Asset$tables = F4(
-	function (x, z, scaleX, scaleZ) {
+var _user$project$Asset$cylinders = F6(
+	function (scaleX, scaleY, scaleZ, x, z, num) {
 		return A2(
-			_user$project$AFrame_Primitives$box,
+			_user$project$AFrame_Primitives$cylinder,
 			{
 				ctor: '::',
-				_0: A3(_user$project$AFrame_Primitives_Attributes$position, x, 0.5, z),
+				_0: A3(_user$project$AFrame_Primitives_Attributes$position, x, (scaleY / 2) + 0.5, z),
 				_1: {
 					ctor: '::',
-					_0: A3(_user$project$AFrame_Primitives_Attributes$scale, scaleX, 1, scaleZ),
+					_0: A3(_user$project$AFrame_Primitives_Attributes$scale, scaleX, scaleY, scaleZ),
 					_1: {
 						ctor: '::',
 						_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$orange),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								_elm_lang$core$Basics$toString(num)),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			},
 			{ctor: '[]'});
 	});
-var _user$project$Asset$chairs = F4(
-	function (x, z, scaleX, scaleZ) {
+var _user$project$Asset$spheres = F6(
+	function (scaleX, scaleY, scaleZ, x, z, num) {
+		return A2(
+			_user$project$AFrame_Primitives$sphere,
+			{
+				ctor: '::',
+				_0: A3(_user$project$AFrame_Primitives_Attributes$position, x, (scaleY / 2) + 0.5, z),
+				_1: {
+					ctor: '::',
+					_0: A3(_user$project$AFrame_Primitives_Attributes$scale, scaleX, scaleY, scaleZ),
+					_1: {
+						ctor: '::',
+						_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$red),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								_elm_lang$core$Basics$toString(num)),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			},
+			{ctor: '[]'});
+	});
+var _user$project$Asset$cubes = F6(
+	function (scaleX, scaleY, scaleZ, x, z, num) {
 		return A2(
 			_user$project$AFrame_Primitives$box,
 			{
 				ctor: '::',
-				_0: A3(_user$project$AFrame_Primitives_Attributes$position, x, 0.5, z),
+				_0: A3(_user$project$AFrame_Primitives_Attributes$position, x, (scaleY / 2) + 0.5, z),
 				_1: {
 					ctor: '::',
-					_0: A3(_user$project$AFrame_Primitives_Attributes$scale, scaleX, 1, scaleZ),
+					_0: A3(_user$project$AFrame_Primitives_Attributes$scale, scaleX, scaleY, scaleZ),
 					_1: {
 						ctor: '::',
-						_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$red),
-						_1: {ctor: '[]'}
+						_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$orange),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								_elm_lang$core$Basics$toString(num)),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			},
 			{ctor: '[]'});
 	});
-var _user$project$Asset$assetList = {ctor: '[]'};
-var _user$project$Asset$addAsset = function (message) {
-	return {ctor: '::', _0: message, _1: _user$project$Asset$assetList};
-};
+var _user$project$Asset$tables = F6(
+	function (scaleX, scaleY, scaleZ, x, z, num) {
+		return A2(
+			_user$project$AFrame_Primitives$box,
+			{
+				ctor: '::',
+				_0: A3(_user$project$AFrame_Primitives_Attributes$position, x, (scaleY / 2) + 0.5, z),
+				_1: {
+					ctor: '::',
+					_0: A3(_user$project$AFrame_Primitives_Attributes$scale, scaleX * 1.5, scaleY, scaleZ * 1.5),
+					_1: {
+						ctor: '::',
+						_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$orange),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								_elm_lang$core$Basics$toString(num)),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			},
+			{ctor: '[]'});
+	});
+var _user$project$Asset$chairs = F6(
+	function (scaleX, scaleY, scaleZ, x, z, num) {
+		return A2(
+			_user$project$AFrame_Primitives$box,
+			{
+				ctor: '::',
+				_0: A3(_user$project$AFrame_Primitives_Attributes$position, x, (scaleY / 2) + 0.5, z),
+				_1: {
+					ctor: '::',
+					_0: A3(_user$project$AFrame_Primitives_Attributes$scale, scaleX * 0.5, scaleY, scaleZ * 0.5),
+					_1: {
+						ctor: '::',
+						_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$red),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								_elm_lang$core$Basics$toString(num)),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			},
+			{ctor: '[]'});
+	});
+var _user$project$Asset$addAsset = F3(
+	function (num, arr, message) {
+		return A3(_elm_lang$core$Dict$insert, num, message, arr);
+	});
 
 var _user$project$Base$getBase = F2(
 	function (side, height) {
@@ -8955,7 +9038,7 @@ var _user$project$CameraConfig$cam = A2(
 	_user$project$AFrame_Primitives_Camera$camera,
 	{
 		ctor: '::',
-		_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 1.6, 5),
+		_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 9, 0),
 		_1: {
 			ctor: '::',
 			_0: _user$project$AFrame_Primitives_Camera$far(1000),
@@ -8981,43 +9064,130 @@ var _user$project$CameraConfig$cam = A2(
 
 var _user$project$Main$height = 3.0;
 var _user$project$Main$side = 30.0;
-var _user$project$Main$update = F2(
-	function (msg, model) {
-		var _p0 = msg;
-		if (_p0.ctor === 'Chair') {
-			return {
-				ctor: '_Tuple2',
-				_0: _user$project$Asset$addAsset(
-					A4(_user$project$Asset$chairs, 0, 0, 3, 3)),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
-		} else {
-			return {
-				ctor: '_Tuple2',
-				_0: _user$project$Asset$addAsset(
-					A4(_user$project$Asset$tables, 0, 0, 3, 3)),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
-		}
-	});
-var _user$project$Main$subscriptions = function (model) {
-	return _elm_lang$core$Platform_Sub$none;
+var _user$project$Main$back = function (list) {
+	return A2(
+		_elm_lang$core$Maybe$withDefault,
+		{ctor: '[]'},
+		_elm_lang$core$List$tail(list));
+};
+var _user$project$Main$first = function (list) {
+	var _p0 = list;
+	if (_p0.ctor === '::') {
+		return _p0._0;
+	} else {
+		return 0;
+	}
 };
 var _user$project$Main$init = {
 	ctor: '_Tuple2',
-	_0: {ctor: '[]'},
+	_0: {dic: _elm_lang$core$Dict$empty, index: 0},
 	_1: _elm_lang$core$Platform_Cmd$none
 };
-var _user$project$Main$Table = {ctor: 'Table'};
-var _user$project$Main$Chair = {ctor: 'Chair'};
+var _user$project$Main$vals = {ctor: '[]'};
+var _user$project$Main$check = _elm_lang$core$Native_Platform.outgoingPort(
+	'check',
+	function (v) {
+		return v;
+	});
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p1 = msg;
+		switch (_p1.ctor) {
+			case 'Chair':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							dic: A3(
+								_user$project$Asset$addAsset,
+								model.index,
+								model.dic,
+								A6(_user$project$Asset$chairs, _p1._0, _p1._1, _p1._2, _p1._3, _p1._4, model.index)),
+							index: model.index + 1
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'Table':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							dic: A3(
+								_user$project$Asset$addAsset,
+								model.index,
+								model.dic,
+								A6(_user$project$Asset$tables, _p1._0, _p1._1, _p1._2, _p1._3, _p1._4, model.index)),
+							index: model.index + 1
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'Cube':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							dic: A3(
+								_user$project$Asset$addAsset,
+								model.index,
+								model.dic,
+								A6(_user$project$Asset$cubes, _p1._0, _p1._1, _p1._2, _p1._3, _p1._4, model.index)),
+							index: model.index + 1
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'Sphere':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							dic: A3(
+								_user$project$Asset$addAsset,
+								model.index,
+								model.dic,
+								A6(_user$project$Asset$spheres, _p1._0, _p1._1, _p1._2, _p1._3, _p1._4, model.index)),
+							index: model.index + 1
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'Cylinder':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							dic: A3(
+								_user$project$Asset$addAsset,
+								model.index,
+								model.dic,
+								A6(_user$project$Asset$cylinders, _p1._0, _p1._1, _p1._2, _p1._3, _p1._4, model.index)),
+							index: model.index + 1
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _user$project$Main$check('Put')
+				};
+		}
+	});
+var _user$project$Main$suggestion = _elm_lang$core$Native_Platform.incomingPort(
+	'suggestion',
+	_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$float));
+var _user$project$Main$Model = F2(
+	function (a, b) {
+		return {dic: a, index: b};
+	});
+var _user$project$Main$Put = {ctor: 'Put'};
 var _user$project$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$id('container'),
-			_1: {ctor: '[]'}
-		},
+		{ctor: '[]'},
 		{
 			ctor: '::',
 			_0: A2(
@@ -9029,114 +9199,189 @@ var _user$project$Main$view = function (model) {
 					_1: {
 						ctor: '::',
 						_0: A2(
-							_user$project$AFrame$entity,
-							{ctor: '[]'},
+							_user$project$AFrame_Primitives$light,
 							{
 								ctor: '::',
+								_0: _user$project$AFrame_Primitives_Attributes$angle(180),
+								_1: {
+									ctor: '::',
+									_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 10, 0),
+									_1: {ctor: '[]'}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_user$project$AFrame_Primitives$light,
+								{
+									ctor: '::',
+									_0: _user$project$AFrame_Primitives_Attributes$angle(180),
+									_1: {
+										ctor: '::',
+										_0: A3(_user$project$AFrame_Primitives_Attributes$position, 20, 10, 20),
+										_1: {ctor: '[]'}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
 								_0: A2(
-									_user$project$AFrame_Primitives$box,
+									_user$project$AFrame_Primitives$light,
 									{
 										ctor: '::',
-										_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 0, 0),
+										_0: _user$project$AFrame_Primitives_Attributes$angle(180),
 										_1: {
 											ctor: '::',
-											_0: A3(_user$project$AFrame_Primitives_Attributes$scale, _user$project$Main$side, 0.1, _user$project$Main$side),
-											_1: {
-												ctor: '::',
-												_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
-												_1: {ctor: '[]'}
-											}
+											_0: A3(_user$project$AFrame_Primitives_Attributes$position, 20, 10, -20),
+											_1: {ctor: '[]'}
 										}
 									},
 									{ctor: '[]'}),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_user$project$AFrame_Primitives$box,
+										_user$project$AFrame_Primitives$light,
 										{
 											ctor: '::',
-											_0: A3(_user$project$AFrame_Primitives_Attributes$position, _user$project$Main$side / 2, _user$project$Main$height / 2, 0),
+											_0: _user$project$AFrame_Primitives_Attributes$angle(180),
 											_1: {
 												ctor: '::',
-												_0: A3(_user$project$AFrame_Primitives_Attributes$scale, 0.1, _user$project$Main$height, _user$project$Main$side),
-												_1: {
-													ctor: '::',
-													_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
-													_1: {ctor: '[]'}
-												}
+												_0: A3(_user$project$AFrame_Primitives_Attributes$position, -20, 10, -20),
+												_1: {ctor: '[]'}
 											}
 										},
 										{ctor: '[]'}),
 									_1: {
 										ctor: '::',
 										_0: A2(
-											_user$project$AFrame_Primitives$box,
+											_user$project$AFrame_Primitives$light,
 											{
 												ctor: '::',
-												_0: A3(_user$project$AFrame_Primitives_Attributes$position, _user$project$Main$side / -2, _user$project$Main$height / 2, 0),
+												_0: _user$project$AFrame_Primitives_Attributes$angle(180),
 												_1: {
 													ctor: '::',
-													_0: A3(_user$project$AFrame_Primitives_Attributes$scale, 0.1, _user$project$Main$height, _user$project$Main$side),
-													_1: {
-														ctor: '::',
-														_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
-														_1: {ctor: '[]'}
-													}
+													_0: A3(_user$project$AFrame_Primitives_Attributes$position, -20, 10, 20),
+													_1: {ctor: '[]'}
 												}
 											},
 											{ctor: '[]'}),
 										_1: {
 											ctor: '::',
 											_0: A2(
-												_user$project$AFrame_Primitives$box,
+												_user$project$AFrame$entity,
+												{ctor: '[]'},
 												{
 													ctor: '::',
-													_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, _user$project$Main$height / 2, _user$project$Main$side / 2),
-													_1: {
-														ctor: '::',
-														_0: A3(_user$project$AFrame_Primitives_Attributes$scale, _user$project$Main$side, _user$project$Main$height, 0.1),
-														_1: {
+													_0: A2(
+														_user$project$AFrame_Primitives$box,
+														{
 															ctor: '::',
-															_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
-															_1: {ctor: '[]'}
-														}
-													}
-												},
-												{ctor: '[]'}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_user$project$AFrame_Primitives$box,
-													{
-														ctor: '::',
-														_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, _user$project$Main$height / 2, _user$project$Main$side / -2),
-														_1: {
-															ctor: '::',
-															_0: A3(_user$project$AFrame_Primitives_Attributes$scale, _user$project$Main$side, _user$project$Main$height, 0.1),
+															_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, 0, 0),
 															_1: {
 																ctor: '::',
-																_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
-																_1: {ctor: '[]'}
+																_0: A3(_user$project$AFrame_Primitives_Attributes$scale, _user$project$Main$side, 0.1, _user$project$Main$side),
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														{ctor: '[]'}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_user$project$AFrame_Primitives$box,
+															{
+																ctor: '::',
+																_0: A3(_user$project$AFrame_Primitives_Attributes$position, _user$project$Main$side / 2, _user$project$Main$height / 2, 0),
+																_1: {
+																	ctor: '::',
+																	_0: A3(_user$project$AFrame_Primitives_Attributes$scale, 0.1, _user$project$Main$height, _user$project$Main$side),
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															},
+															{ctor: '[]'}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_user$project$AFrame_Primitives$box,
+																{
+																	ctor: '::',
+																	_0: A3(_user$project$AFrame_Primitives_Attributes$position, _user$project$Main$side / -2, _user$project$Main$height / 2, 0),
+																	_1: {
+																		ctor: '::',
+																		_0: A3(_user$project$AFrame_Primitives_Attributes$scale, 0.1, _user$project$Main$height, _user$project$Main$side),
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																},
+																{ctor: '[]'}),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_user$project$AFrame_Primitives$box,
+																	{
+																		ctor: '::',
+																		_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, _user$project$Main$height / 2, _user$project$Main$side / 2),
+																		_1: {
+																			ctor: '::',
+																			_0: A3(_user$project$AFrame_Primitives_Attributes$scale, _user$project$Main$side, _user$project$Main$height, 0.1),
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	},
+																	{ctor: '[]'}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_user$project$AFrame_Primitives$box,
+																		{
+																			ctor: '::',
+																			_0: A3(_user$project$AFrame_Primitives_Attributes$position, 0, _user$project$Main$height / 2, _user$project$Main$side / -2),
+																			_1: {
+																				ctor: '::',
+																				_0: A3(_user$project$AFrame_Primitives_Attributes$scale, _user$project$Main$side, _user$project$Main$height, 0.1),
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$AFrame_Primitives_Attributes$color(_user$project$ColorScheme$ground),
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		},
+																		{ctor: '[]'}),
+																	_1: {ctor: '[]'}
+																}
 															}
 														}
-													},
-													{ctor: '[]'}),
-												_1: {ctor: '[]'}
+													}
+												}),
+											_1: {
+												ctor: '::',
+												_0: _user$project$CameraConfig$bg,
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_user$project$AFrame$entity,
+														{ctor: '[]'},
+														_elm_lang$core$Dict$values(model.dic)),
+													_1: {ctor: '[]'}
+												}
 											}
 										}
 									}
 								}
-							}),
-						_1: {
-							ctor: '::',
-							_0: _user$project$CameraConfig$bg,
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_user$project$AFrame$entity,
-									{ctor: '[]'},
-									_user$project$Asset$assetList),
-								_1: {ctor: '[]'}
 							}
 						}
 					}
@@ -9144,46 +9389,167 @@ var _user$project$Main$view = function (model) {
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$div,
+					_elm_lang$html$Html$button,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$id('layout'),
-						_1: {ctor: '[]'}
+						_0: _elm_lang$html$Html_Attributes$id('layout1'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('mdl-button mdl-js-button mdl-js-ripple-effect'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Put),
+								_1: {ctor: '[]'}
+							}
+						}
 					},
 					{
 						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$button,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Chair),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('Chair'),
-								_1: {ctor: '[]'}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$button,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Table),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('Table'),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
+						_0: _elm_lang$html$Html$text('Deploy'),
+						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
 			}
 		});
+};
+var _user$project$Main$Cylinder = F5(
+	function (a, b, c, d, e) {
+		return {ctor: 'Cylinder', _0: a, _1: b, _2: c, _3: d, _4: e};
+	});
+var _user$project$Main$Sphere = F5(
+	function (a, b, c, d, e) {
+		return {ctor: 'Sphere', _0: a, _1: b, _2: c, _3: d, _4: e};
+	});
+var _user$project$Main$Cube = F5(
+	function (a, b, c, d, e) {
+		return {ctor: 'Cube', _0: a, _1: b, _2: c, _3: d, _4: e};
+	});
+var _user$project$Main$Table = F5(
+	function (a, b, c, d, e) {
+		return {ctor: 'Table', _0: a, _1: b, _2: c, _3: d, _4: e};
+	});
+var _user$project$Main$Chair = F5(
+	function (a, b, c, d, e) {
+		return {ctor: 'Chair', _0: a, _1: b, _2: c, _3: d, _4: e};
+	});
+var _user$project$Main$handleVal = function (val) {
+	return _elm_lang$core$Native_Utils.eq(
+		_user$project$Main$first(val),
+		4) ? A5(
+		_user$project$Main$Chair,
+		_user$project$Main$first(
+			_user$project$Main$back(val)),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(val))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(val)))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(val))))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(
+							_user$project$Main$back(val))))))) : (_elm_lang$core$Native_Utils.eq(
+		_user$project$Main$first(val),
+		3) ? A5(
+		_user$project$Main$Table,
+		_user$project$Main$first(
+			_user$project$Main$back(val)),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(val))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(val)))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(val))))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(
+							_user$project$Main$back(val))))))) : (_elm_lang$core$Native_Utils.eq(
+		_user$project$Main$first(val),
+		0) ? A5(
+		_user$project$Main$Cube,
+		_user$project$Main$first(
+			_user$project$Main$back(val)),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(val))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(val)))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(val))))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(
+							_user$project$Main$back(val))))))) : (_elm_lang$core$Native_Utils.eq(
+		_user$project$Main$first(val),
+		1) ? A5(
+		_user$project$Main$Sphere,
+		_user$project$Main$first(
+			_user$project$Main$back(val)),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(val))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(val)))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(val))))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(
+							_user$project$Main$back(val))))))) : A5(
+		_user$project$Main$Cylinder,
+		_user$project$Main$first(
+			_user$project$Main$back(val)),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(val))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(val)))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(val))))),
+		_user$project$Main$first(
+			_user$project$Main$back(
+				_user$project$Main$back(
+					_user$project$Main$back(
+						_user$project$Main$back(
+							_user$project$Main$back(val))))))))));
+};
+var _user$project$Main$subscriptions = function (model) {
+	return _user$project$Main$suggestion(_user$project$Main$handleVal);
 };
 var _user$project$Main$main = _elm_lang$html$Html$program(
 	{init: _user$project$Main$init, view: _user$project$Main$view, subscriptions: _user$project$Main$subscriptions, update: _user$project$Main$update})();
